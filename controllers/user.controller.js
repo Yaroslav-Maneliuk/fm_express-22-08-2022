@@ -26,3 +26,22 @@ module.exports.showUser = async (req, res) => {
     res.status(400).send(error.message);
   }
 };
+
+module.exports.delete = async (req, res) => {
+  try {
+    const users = await User.deleteUser(req.params.id);
+    res.status(200).send(users);
+  } catch (error) {
+    res.status(400).send(error.message);
+  }
+};
+
+// module.exports.update = async (req, res) => {
+//   try {
+//     const users = await User.updateUser(req.params.id);
+//     res.status(200).send(users);
+//   } catch (error) {
+//     res.status(400).send(error.message);
+//   }
+// };
+

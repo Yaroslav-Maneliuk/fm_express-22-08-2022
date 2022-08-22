@@ -10,8 +10,8 @@ const parseBody = express.json();
 app.get("/users", UserController.showUsers)
 app.get("/user/:id", UserController.showUser)
 app.post("/user", parseBody, validate, UserController.createUser);
-// app.put("/user/:qqq", parseBody, validate, updateUser);
-// app.delete("/user/:id", UserController.delete);
+// app.put("/user/:id", parseBody, validate, UserController.updateUser);
+app.delete("/user/:id", UserController.delete);
 
 app.listen(PORT, () => {
   console.log("server started at port " + PORT);
