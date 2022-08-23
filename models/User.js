@@ -21,12 +21,13 @@ User.findByPk = async (id) => {
 };
 
 User.deleteUser = async (id) => {
-  db.delete(id)
+  db.delete(id);
   return [...db.values()];
 };
 
-// User.updateUser = async (id) => {
-
+// User.updateUser = async (id, values) => {
+//   db.
+//   return [...db.values()];
 // };
 
 module.exports = User;
